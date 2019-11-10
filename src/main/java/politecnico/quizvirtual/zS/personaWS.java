@@ -7,12 +7,9 @@ package politecnico.quizvirtual.zS;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import politecnico.quizvirtual.model.quiz;
 import politecnico.quizvirtual.reposy.quizRepository;
@@ -22,12 +19,13 @@ import politecnico.quizvirtual.reposy.quizRepository;
  * @author Mario
  */
 @RestController()
-public class quizWS {
+@RequestMapping("/api/")
+public class personaWS {
     
     @Autowired
     quizRepository quizrepository;
     
-    @GetMapping("/quizWS/{token}")
+    @GetMapping("/WS")
     public List<quiz> postController(@PathVariable String token) {
         System.out.println(token);
         if ("2".equals(token)){

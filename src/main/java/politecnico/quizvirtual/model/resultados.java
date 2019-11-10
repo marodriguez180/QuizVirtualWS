@@ -10,7 +10,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.springframework.stereotype.Component;
 
 /**
  *
@@ -20,6 +19,7 @@ import org.springframework.stereotype.Component;
 @Table(name = "resultados")
 public class resultados implements Serializable {
     
+    private static final long serialVersionUID = -8364572852334169042L;
     @Id
     private int idresultado;
     private String puntaje_total;

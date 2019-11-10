@@ -9,7 +9,6 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.springframework.stereotype.Component;
 
 /**
  *
@@ -19,7 +18,8 @@ import org.springframework.stereotype.Component;
 @Table(name = "tipoDocumento")
 
 public class tipoDocumento implements Serializable {
-    
+
+    private static final long serialVersionUID = 3665851373096821603L;
     @Id
     private int idtipodocumento;
     private String description;

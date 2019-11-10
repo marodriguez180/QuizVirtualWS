@@ -10,7 +10,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import org.springframework.stereotype.Component;
 
 /**
  *
@@ -20,6 +19,10 @@ import org.springframework.stereotype.Component;
 @Table(name = "quizes")
 public class quiz implements Serializable {
     
+    /**
+     *
+     */
+    private static final long serialVersionUID = 4443253951511319046L;
     @Id
     private int id_quiz;
     private int cant_preguntas;
