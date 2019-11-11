@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package politecnico.quizvirtual.reposy;
+package politecnico.quizvirtual.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import politecnico.quizvirtual.model.tipoDocumento;
+import org.springframework.stereotype.Repository;
+import politecnico.quizvirtual.model.carreraObservacion;
 
 /**
  *
  * @author Mario
  */
-public interface tipoDocumentoRepository extends JpaRepository<tipoDocumento, Long> {
+@Repository
+public interface carreraObservacionRepository extends JpaRepository<carreraObservacion, Long>{
     
 }

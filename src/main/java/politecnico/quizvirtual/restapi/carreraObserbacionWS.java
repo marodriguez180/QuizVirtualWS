@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import politecnico.quizvirtual.model.carreraObservacion;
-import politecnico.quizvirtual.reposy.carreraObservacionRepository;
+import politecnico.quizvirtual.repository.carreraObservacionRepository;
 
 
 /**

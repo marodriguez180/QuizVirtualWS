@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import politecnico.quizvirtual.model.persona;
 import politecnico.quizvirtual.model.quiz;
-import politecnico.quizvirtual.reposy.quizRepository;
+import politecnico.quizvirtual.repository.quizRepository;
 
 /**
  *

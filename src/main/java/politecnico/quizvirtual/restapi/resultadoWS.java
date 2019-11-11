@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import politecnico.quizvirtual.model.resultados;
-import politecnico.quizvirtual.reposy.resultadoRepository;
+import politecnico.quizvirtual.repository.resultadoRepository;
 
 /**
  *
