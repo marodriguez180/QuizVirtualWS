@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package politecnico.quizvirtual.zS;
+package politecnico.quizvirtual.restapi;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import politecnico.quizvirtual.model.persona;
 import politecnico.quizvirtual.model.quiz;
 import politecnico.quizvirtual.reposy.quizRepository;
 
@@ -19,19 +21,20 @@ import politecnico.quizvirtual.reposy.quizRepository;
  * @author Mario
  */
 @RestController()
-@RequestMapping("/api")
+@RequestMapping("/api/WSquiz")
 public class quizWS {
     
     @Autowired
     quizRepository quizrepository;
     
-    @GetMapping("/quizWS")
-    public List<quiz> postController(@PathVariable String token) {
-        System.out.println(token);
-        if ("2".equals(token)){
-            return quizrepository.findAll();
-        }
-        return null;
+    @RequestMapping(method = RequestMethod.GET, value="/getA")
+    public List<quiz> getAllQuizes() {
+        return quizrepository.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value="/getQByP")
+        public List<quiz> getQuizezByPeople(@RequestBody persona person) {
+        return quizrepository.findAllquizesByPeople(Integer.toString(person.getId_persona()));
     }
     
 }
