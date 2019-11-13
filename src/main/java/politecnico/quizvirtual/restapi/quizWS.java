@@ -6,6 +6,9 @@
 package politecnico.quizvirtual.restapi;
 
 import java.util.List;
+
+import com.fasterxml.jackson.core.JsonFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +34,26 @@ public class quizWS {
     public List<quiz> getAllQuizes() {
         return quizrepository.findAll();
     }
+
+    @RequestMapping(method = RequestMethod.POST, value="/saveQ")
+    public String saveQuiz(@RequestBody String quiz) {
+        try {
+            JsonFactory factory = new JsonFactory();
+            factory.enable(JsonParser.Feature.ALLOW_SINGLE_QUOTES);
+            ObjectMapper mapper = new ObjectMapper(factory);
+        
+            User user = mapper.reader().forType(User.class)
+            .readValue(json);
+            //quizrepository.save(quiz);
+            return quiz;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "false";
+        }
+        
+    }
+
+    
 
     @RequestMapping(method = RequestMethod.POST, value="/getQByP")
         public List<quiz> getQuizezByPeople(@RequestBody persona person) {

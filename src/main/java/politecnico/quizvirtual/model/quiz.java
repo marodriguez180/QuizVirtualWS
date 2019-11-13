@@ -25,6 +25,7 @@ public class quiz implements Serializable {
     private static final long serialVersionUID = 4443253951511319046L;
     @Id
     private int id_quiz;
+    private String nombre;
     private int cant_preguntas;
     private Date fecha_ini;
 
@@ -34,6 +35,14 @@ public class quiz implements Serializable {
 
     public void setId_quiz(int id_quiz) {
         this.id_quiz = id_quiz;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getCant_preguntas() {
