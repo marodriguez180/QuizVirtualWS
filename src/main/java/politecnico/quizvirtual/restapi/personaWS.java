@@ -28,7 +28,7 @@ public class personaWS {
     quizRepository quizrepository;
     
     @RequestMapping(method = RequestMethod.GET, value="/getA")
-    public List<quiz> getAllQuizes() {
+    public List<quiz> getAllPeople() {
         return quizrepository.findAll();
     }
 

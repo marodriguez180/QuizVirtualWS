@@ -26,7 +26,7 @@ public class tipoDocumentoWS {
     tipoDocumentoRepository tipodocumentorepository;
     
     @RequestMapping(method = RequestMethod.GET, value="/getA")
-    public List<tipoDocumento> getAllQuizes() {
+    public List<tipoDocumento> getAllDocumentType() {
         return tipodocumentorepository.findAll();
     }
 

@@ -26,7 +26,7 @@ public class resultadoWS {
     resultadoRepository resultadorepository;
     
     @RequestMapping(method = RequestMethod.GET, value="/getA")
-    public List<resultados> getAllQuizes() {
+    public List<resultados> getAllResults() {
         return resultadorepository.findAll();
     }
 }
