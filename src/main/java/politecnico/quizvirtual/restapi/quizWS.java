@@ -5,9 +5,14 @@
  */
 package politecnico.quizvirtual.restapi;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,16 +41,14 @@ public class quizWS {
     }
 
     @RequestMapping(method = RequestMethod.POST, value="/saveQ")
-    public String saveQuiz(@RequestBody String quiz) {
-        try {
-            JsonFactory factory = new JsonFactory();
-            factory.enable(JsonParser.Feature.ALLOW_SINGLE_QUOTES);
-            ObjectMapper mapper = new ObjectMapper(factory);
-        
-            User user = mapper.reader().forType(User.class)
-            .readValue(json);
+    public String saveQuiz(@RequestBody quiz quis) {
+		Date date = new Date();
+	    try {
+            quis.setFecha_ini(date);
+            this.quizrepository.save(quis);
+
             //quizrepository.save(quiz);
-            return quiz;
+            return null;
         } catch (Exception e) {
             e.printStackTrace();
             return "false";

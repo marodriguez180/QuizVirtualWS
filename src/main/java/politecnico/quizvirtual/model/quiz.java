@@ -8,6 +8,8 @@ package politecnico.quizvirtual.model;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,6 +26,7 @@ public class quiz implements Serializable {
      */
     private static final long serialVersionUID = 4443253951511319046L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_quiz;
     private String nombre;
     private int cant_preguntas;
